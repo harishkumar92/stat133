@@ -1,0 +1,13 @@
+{
+    "email": "harishkumar@berkeley.edu", 
+    "grades": {
+        "lab1": {
+            "earned": 9, 
+            "possible": 12
+        }
+    }, 
+    "id": "23154182", 
+    "login": "harishkumar92", 
+    "name": "Harish Kumar Palaniswamy", 
+    "url": "git@github.com:harishkumar92/stat133.git"
+}
