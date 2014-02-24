@@ -96,54 +96,67 @@ class Cipher(object):
         """
         The constructor method.
         """
-        return NotImplemented
+        alphabet = "abcdefghijklmnopqrstuvwxyz"
+        if mapping =="reverse":
+            key = alphabet[::-1]
+            self.translator = string.maketrans(alphabet, key)
+            self.decryptor = string.maketrans(key, alphabet)
+        elif mapping == "rot13":
+            key = alphabet[-13:] + alphabet[:len(alphabet) - 13]
+            self.translator = string.maketrans(alphabet, key)
+            self.decryptor = string.maketrans(key, alphabet)
+        elif mapping == "hybrid":
+            key = alphabet[:14][::-1] + alphabet[14:][::-1]
+            self.translator = string.maketrans(alphabet, key)
+            self.decryptor = string.maketrans(key, alphabet)
+
 
     def isvalid(self, message):
         """
         Checks whether a string is a valid for this class.
-    
+
         Parameters
         ----------
         message : string
             A string (i.e., you can assume you get a string)
-    
+
         Returns
         -------
         out : bool
             Returns True, if message is only composed of letters
             in our alphabet (and False otherwise).
         """
-        return NotImplemented
+        return (message.isalpha() and message.islower())
 
     def encrypt(self, message):
         """
         Encrypt the message
-  
+
         Parameters
         ----------
         message: string
             A string (i.e., you can assume you get a string)
-  
+
         Returns
         -------
         out : string
         """
-        return NotImplemented
-  
+        return message.translate(self.translator)
+
     def decrypt(self, message):
         """
         Decrypt the message
-    
+
         Parameters
         ----------
         message: string
             A string (i.e., you can assume you get a string)
-    
+
         Returns
         -------
         out : string
         """
-        return NotImplemented
+        return message.translate(self.decryptor)
 
 if __name__ == "__main__":
     import doctest
