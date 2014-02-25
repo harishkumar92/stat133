@@ -12,9 +12,12 @@
         "lab3": {
             "earned": 26, 
             "possible": 30
+        }, 
+        "lab4": {
+            "earned": 30, 
+            "possible": 30
         }
     }, 
-    "id": "23154182", 
     "login": "harishkumar92", 
     "name": "Harish Kumar Palaniswamy", 
     "url": "git@github.com:harishkumar92/stat133.git"
