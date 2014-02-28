@@ -1,6 +1,6 @@
-from numpy import array
-from numpy.random import rand
-from pandas import DataFrame
+from numpy import array,zeros
+from numpy.random import rand,randint
+from pandas import DataFrame,Series
 
 
 def simulate_grades(class_size, max_scores=[100,100,100]):
@@ -36,7 +36,15 @@ def simulate_grades(class_size, max_scores=[100,100,100]):
     >>> simulate_grades(250, [100, 100, 100]).min() > 0
     True
     """
-    return NotImplemented
+    columns = len(max_scores)
+    shape = (class_size, columns)
+    returnVal = zeros(shape)
+    
+    
+    for row in range(0, shape[0]):
+        for column in range(0,shape[1]):
+            returnVal[row,column] = rand()*max_scores[column]
+    return returnVal
 
 
 
@@ -70,7 +78,11 @@ def simulate_grade_df(class_size, grade_items={'F':100,'M':100,'HW':10}):
     >>> simulate_grade_df(4,{'M':5,'F':5,'HW':5}).shape == (4,3)
     True
     """
-    return NotImplemented 
+    max_scores = grade_items.values()
+    exams = grade_items.keys()
+    
+    numpy_grades = simulate_grades(class_size, max_scores)
+    return DataFrame(numpy_grades, columns=exams)
 
 
 
@@ -88,7 +100,8 @@ class GradeBook(object):
 
 	(1) self.raw_grades, which is a DataFrame with 
 	        - row labels given by student_ids
-	        - column labels given by item_list
+	        - column labels given by item_list        for column in range(0,shape[1]):
+            print max_scores[column]
 	        - values given by grade_arr
 
         (2) self.total_grades, set to None
@@ -125,7 +138,11 @@ class GradeBook(object):
 	>>> a.max_scores[0] == 30
 	True
         """
-        pass
+        self.raw_grades = DataFrame(grade_arr,index=student_ids, columns=item_list)
+        self.total_grades = None
+        self.letter_grades = None
+        self.max_scores = None
+        
 
 
     def compute_total_grades(self, item_weights=None, max_score=100):
@@ -164,6 +181,7 @@ class GradeBook(object):
 	>>> a.total_grades['34'] == 10
 	True
         """
+        
 	return NotImplemented
          
 
