@@ -141,7 +141,7 @@ class GradeBook(object):
         self.raw_grades = DataFrame(grade_arr,index=student_ids, columns=item_list)
         self.total_grades = None
         self.letter_grades = None
-        self.max_scores = None
+        self.max_scores = max_scores
         
 
 
