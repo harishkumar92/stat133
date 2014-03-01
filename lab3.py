@@ -255,3 +255,9 @@ def get_codons(dna):
     Error: the string is not a multiple of 3.
     """
     return NotImplemented
+
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
