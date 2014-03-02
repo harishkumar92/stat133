@@ -1,8 +1,8 @@
 #Make sure you understand all the imports below
 #they may help you save time
-from numpy import array
+from numpy import array,dot,divide
 from numpy.random import rand
-from pandas import DataFrame
+from pandas import DataFrame,Series
 
 
 def simulate_grades(class_size, max_scores=[100,100,100]):
@@ -54,7 +54,13 @@ def simulate_grades(class_size, max_scores=[100,100,100]):
     >>> g[:,2].max() < 40
     True
     """
-    return NotImplemented
+    no_rows = class_size
+    columns = []
+    for column in range(0,len(max_scores)):
+        a = rand(class_size) * max_scores[column]
+        columns.append(a)
+    val = array(columns)
+    return val.transpose()
 
 
 
@@ -88,7 +94,12 @@ def simulate_grade_df(class_size, grade_items={'F':100,'M':100,'HW':10}):
     >>> simulate_grade_df(4,{'M':5,'F':5,'HW':5}).shape == (4,3)
     True
     """
-    return NotImplemented
+    ordered_exams = grade_items.keys()
+    ordered_max_scores = [grade_items[x] for x in ordered_exams]
+    grade_array = simulate_grades(class_size, ordered_max_scores)
+    val = DataFrame(grade_array)
+    val.columns = ordered_exams
+    return val
 
 
 
@@ -143,7 +154,11 @@ class GradeBook(object):
         >>> a.max_scores[0] == 30
         True
         """
-        return NotImplemented
+        self.raw_grades = DataFrame(grade_arr,index = student_ids, columns = item_list)
+        self.total_grades = None
+        self.letter_grades =None
+        self.max_scores = max_scores
+
 
     def compute_total_grades(self, item_weights=None, max_score=100):
         """
@@ -181,7 +196,14 @@ class GradeBook(object):
         >>> a.total_grades['34'] == 10
         True
         """
-        return NotImplemented
+        val = Series(index=self.raw_grades.index)
+
+
+        for row in range(0,len(self.raw_grades.index)):
+            max_scores2 =[float(x) for x in self.max_scores]
+            val.ix[row] =  dot(divide(self.raw_grades.ix[row], max_scores2), item_weights) * max_score
+        self.total_grades = val
+        return val
 
 
 
