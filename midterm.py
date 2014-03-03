@@ -53,9 +53,10 @@ def decision_rule(x, y, z):
     >>> decision_rule(False, False, False)
     False
     """
-    
-     
-    return NotImplemented 
+    if ((x and y) or z):
+        return True
+    else:
+        return False
 
 
 #---------------------------------------------------------------------------
@@ -86,9 +87,14 @@ def compare_string_length(x, y):
     >>> compare_string_length(True, 1)
     -1
     """
-
-    return NotImplemented        
-
+    x= str(x)
+    y = str(y)
+    if (len(x) < len(y)):
+        return 1
+    elif (len(y) < len(x)):
+        return -1
+    else:
+        return 0
 
 #---------------------------------------------------------------------------
 # QUESTION 3 - NUMERICAL FUNCTIONS (10 points)
@@ -115,8 +121,12 @@ def compute_grade(grades, k):
     >>> compute_grade([1,2,3,4], 3)
     4.0
     """
-    
-    return NotImplemented
+    if len(grades) < k:
+        return 0
+    else:
+        grades = sorted(grades)
+        grades = grades[k:]
+        return float(sum(grades)/len(grades))
     
 
 #---------------------------------------------------------------------------
@@ -174,9 +184,14 @@ class DNA(object):
         >>> DNA('AGTCCACCCTAAACTCCACAG' * 4).to_protein()
         'spp-tpqspp-tpqspp-tpqspp-tpq'
         """
-        
-        return NotImplemented
-        
+        val = ""
+        if ((len(self.dna) % 3) != 0):
+            raise ValueError("Not multiple of 3")
+        else:
+            for i in range(0, len(self.dna)/3):
+                val += self.codon2amino[self.dna[3*i:(3*i+3)]]
+            self.protein = val
+            return self.protein        
 
 
 
