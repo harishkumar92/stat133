@@ -203,7 +203,7 @@ class GradeBook(object):
             max_scores2 =[float(x) for x in self.max_scores]
             val.ix[row] =  dot(divide(self.raw_grades.ix[row], max_scores2), item_weights) * max_score
         self.total_grades = val
-        return val
+        return val.describe()
 
 
 

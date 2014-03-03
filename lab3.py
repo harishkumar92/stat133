@@ -1,7 +1,7 @@
 dna = 'ATGATTTTTCCATCTTTAAGTGCGATACTGTTTTGT'
 dna_bases = ['A', 'C', 'G', 'T']
-rna_bases = ['A', 'C', 'G', 'U'] 
-basecomplement = {'A': 'T', 'C': 'G', 'T': 'A', 'G': 'C'} 
+rna_bases = ['A', 'C', 'G', 'U']
+basecomplement = {'A': 'T', 'C': 'G', 'T': 'A', 'G': 'C'}
 
 def is_dna(dna):
     """
@@ -34,7 +34,10 @@ def is_dna(dna):
     >>> is_dna('My grandMa')
     False
     """
-    return NotImplemented
+    for char in dna:
+        if char not in dna_bases:
+            return False
+    return True
 
 def is_rna(rna):
     """
@@ -69,7 +72,10 @@ def is_rna(rna):
     >>> is_rna('CCCCCC')
     True
     """
-    return NotImplemented
+    for char in rna:
+        if char not in rna_bases:
+            return False
+    return True
 
 def transcribe(dna):
     """
@@ -91,14 +97,15 @@ def transcribe(dna):
     ----
     You may want to iterate over the string building up a new string character
     by character (use the '+' operator).
-    
+
 
     Examples
     --------
     >>> transcribe('ATGATT')
      'AUGAUU'
     """
-    return NotImplemented
+
+    return dna.replace("T", "U") if is_dna(dna) else None
 
 def reverse(dna):
     """
@@ -123,7 +130,10 @@ def reverse(dna):
     >>> reverse('ATGATT')
     'TTAGTA'
     """
-    return NotImplemented
+    if len(dna) <= 1:
+        return dna
+    else:
+        return reverse(dna[1:]) + dna[0]
 
 def complement(dna):
     """
@@ -148,7 +158,14 @@ def complement(dna):
     >>> complement('ATGATT')
     'TACTAA'
     """
-    return NotImplemented
+    returnval = ""
+    if is_dna(dna):
+        for char in dna:
+            returnval += basecomplement[char]
+        return returnval
+    return None
+
+
 
 def is_complement(strand1, strand2):
     """
@@ -176,7 +193,8 @@ def is_complement(strand1, strand2):
     >>> is_complement('ATGATT', 'TACTAT')
     False
     """
-    return NotImplemented
+
+    return strand1 == complement(strand2)
 
 def reversecomplement(dna):
     """
@@ -199,8 +217,8 @@ def reversecomplement(dna):
     --------
     >>> reversecomplement('TACTAA')
     'TTAGTA'
-    """ 
-    return NotImplemented
+    """
+    return complement(reverse(dna))
 
 def gc_content(dna):
     """
@@ -226,7 +244,7 @@ def gc_content(dna):
     >>> gc_content('TACTAA')
     0.16666666666666666
     """
-    return NotImplemented
+    return float(dna.count("G") + dna.count("C")) / float(len(dna))
 
 def get_codons(dna):
     """
@@ -245,7 +263,7 @@ def get_codons(dna):
     ----
     You should check that the length of the string is divisible by 3
     (the modulus operator may be helpful).  Then go through the string
-    grabbing three characters at time and appending them to a list.    
+    grabbing three characters at time and appending them to a list.
 
     Examples
     --------
@@ -254,10 +272,14 @@ def get_codons(dna):
     >>> get_codons('TACTA')
     Error: the string is not a multiple of 3.
     """
-    return NotImplemented
+
+    if len(dna) % 3 == 0:
+        returnval = []
+        for i in range(0, len(dna),3):
+            returnval.append(dna[i:i+3])
+        return returnval
+    else:
+        print "Error: the string is not a multiple of 3."
 
 
 
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()

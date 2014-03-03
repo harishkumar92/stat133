@@ -10,10 +10,14 @@
             "possible": 18
         }, 
         "lab3": {
-            "earned": 26, 
+            "earned": 30, 
             "possible": 30
         }, 
         "lab4": {
+            "earned": 30, 
+            "possible": 30
+        }, 
+        "lab5": {
             "earned": 30, 
             "possible": 30
         }

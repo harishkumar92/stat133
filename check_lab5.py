@@ -1,4 +1,4 @@
-import json 
+import json
 import logging
 import os
 
@@ -38,15 +38,9 @@ def check(command, answer, score):
         wrong(command, answer, result, score)
         return 0
 
-grades = get_grades('../../data/grades.json')
 student = get_grades('grades.json')
-
 score += check('os.path.isfile("'+lab+'.py")', True, 4)
-for d in grades:
-    if d['login']==student['login']:
-        d['grades'][lab] = {'earned': score, 'possible': possible}
-
-save_grades(grades, '../../data/grades.json')
+student['grades'][lab] = {'earned': score, 'possible': possible}
 
 try:
     m = __import__(lab)
@@ -73,10 +67,6 @@ score += check('len(b)', 8, 2)
 score += check('a.total_grades["22"]', 50, 2)
 score += check('a.total_grades["34"]', 10, 2)
 
-for d in grades:
-    if d['login']==student['login']:
-        d['grades'][lab] = {'earned': score, 'possible': possible}
-        print student['login'] + ' got ' + str(score)
-
+student['grades'][lab] = {'earned': score, 'possible': possible}
 logging.info("You got a %s out of %s.", str(score), str(possible))
-save_grades(grades, '../../data/grades.json')
+save_grades(student, 'grades.json')
