@@ -1,0 +1,36 @@
+#!/bin/bash
+
+EXAM_FILE="${1}"
+
+if [ -z "${EXAM_FILE}" ]; then
+	echo "Error: specify exam file."
+	echo "Example usage: $0 midterm.py"
+	exit 1
+elif [ ! -f ${EXAM_FILE} ]; then
+	echo "Could not find ${EXAM_FILE} in the current directory."
+	exit 1
+fi
+
+GIT_CONFIG=/tmp/gitconfig
+GIT_CONFIG=~/.gitconfig
+
+
+EXAM_NAME="Midterm computer"
+EXAM_EMAIL="mid@term.edu"
+
+if [ -n "${EXAM_NAME}" -a -n "${EXAM_EMAIL}" ]; then
+	(
+		printf "[core]\n\teditor = gedit\n\n[user]\n" 
+		printf "\tname = %s\n" "${EXAM_NAME}"
+		printf "\temail = %s\n" "${EXAM_EMAIL}"
+	) > ${GIT_CONFIG}
+	cat ${GIT_CONFIG}
+else
+	echo "Git configuration failed. Retrying..."
+	exec $0
+fi
+
+git add ${EXAM_FILE} && \
+git commit -m "Midterm submission" ${EXAM_FILE} && \
+git push && \
+echo "Submission successful." || echo "Error: please re-run this script."
