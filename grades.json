@@ -11,18 +11,36 @@
         }, 
         "lab3": {
             "earned": 30, 
+            "hash": "892a01e98ea822449e435858a3672bc6fcd73fee", 
+            "note": "", 
+            "penalty": 0, 
             "possible": 30
         }, 
         "lab4": {
             "earned": 30, 
+            "hash": "892a01e98ea822449e435858a3672bc6fcd73fee", 
+            "note": "", 
+            "penalty": 0, 
             "possible": 30
         }, 
         "lab5": {
             "earned": 30, 
+            "hash": "892a01e98ea822449e435858a3672bc6fcd73fee", 
+            "note": "", 
+            "penalty": 0, 
             "possible": 30
+        }, 
+        "midterm": {
+            "earned": 38, 
+            "hash": "892a01e98ea822449e435858a3672bc6fcd73fee", 
+            "note": "", 
+            "penalty": 0, 
+            "possible": 40
         }
     }, 
+    "lab": 1, 
     "login": "harishkumar92", 
     "name": "Harish Kumar Palaniswamy", 
+    "status": "enrolled", 
     "url": "git@github.com:harishkumar92/stat133.git"
 }

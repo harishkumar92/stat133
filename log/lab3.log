@@ -1,0 +1,14 @@
+INFO:root:(2 points) os.path.isfile("lab3.py") is True
+INFO:root:(2 points) m.reverse("ATGATT") is TTAGTA
+INFO:root:(2 points) m.is_dna("ANT") is False
+INFO:root:(2 points) m.is_dna("ATT") is True
+INFO:root:(2 points) m.is_rna("AU") is True
+INFO:root:(2 points) m.is_rna("AT") is False
+INFO:root:(2 points) m.reverse("ATC") is CTA
+INFO:root:(2 points) m.transcribe("ATCGTC") is AUCGUC
+INFO:root:(2 points) m.complement("ATCGGA") is TAGCCT
+INFO:root:(2 points) m.is_complement("TAGCCT", "ATCGGA") is True
+INFO:root:(2 points) m.reversecomplement("ATGCAA") is TTGCAT
+INFO:root:(4 points) m.gc_content("ACAAGGGCT") is 0.555555555556
+INFO:root:(4 points) m.get_codons("ATGCCC") is ['ATG', 'CCC']
+INFO:root:You got a 30 out of 30.

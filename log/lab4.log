@@ -1,0 +1,16 @@
+INFO:root:(8 points) os.path.isfile("lab4.py") is True
+INFO:root:Executed rev = m.Cipher("reverse")
+INFO:root:(2 points) rev.encrypt("testcase") is gvhgxzhv
+INFO:root:(2 points) rev.decrypt("testcase") is gvhgxzhv
+INFO:root:(2 points) rev.isvalid("testcase") is True
+INFO:root:(2 points) rev.isvalid("123") is False
+INFO:root:(2 points) rev.isvalid("TestCase") is False
+INFO:root:Executed rot = m.Cipher("rot13")
+INFO:root:(2 points) rot.encrypt("testcase") is grfgpnfr
+INFO:root:(2 points) rot.decrypt("testcase") is grfgpnfr
+INFO:root:(2 points) rot.isvalid("testcase") is True
+INFO:root:Executed hyb = m.Cipher("hybrid")
+INFO:root:(2 points) hyb.encrypt("testcase") is ujvulnvj
+INFO:root:(2 points) hyb.decrypt("testcase") is ujvulnvj
+INFO:root:(2 points) hyb.isvalid("testcase") is True
+INFO:root:You got a 30 out of 30.

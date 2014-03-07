@@ -1,0 +1,18 @@
+INFO:root:(4 points) os.path.isfile("lab5.py") is True
+INFO:root:(2 points) m.simulate_grades(2,[5,5,5]).shape == (2,3) is True
+INFO:root:Executed gd = m.simulate_grades(10, [5, 20, 40])
+INFO:root:(2 points) gd[:,0].max() < 5 is True
+INFO:root:(2 points) gd[:,1].max() < 20 is True
+INFO:root:(2 points) gd[:,2].max() < 40 is True
+INFO:root:(2 points) m.simulate_grade_df(3,{"M":5,"HW":5}).shape == (3,2) is True
+INFO:root:Executed a = m.GradeBook(array([[5,5],[1,1]]),['22','34'],['F','M'],[10, 10])
+INFO:root:(2 points) type(a.raw_grades) == DataFrame is True
+INFO:root:(2 points) a.total_grades is None
+INFO:root:(2 points) a.raw_grades.shape == (2,2) is True
+INFO:root:(2 points) a.raw_grades.ix[0,0] is 5
+INFO:root:(2 points) a.max_scores[0] is 10
+INFO:root:Executed b = a.compute_total_grades([0.3, 0.7], 100)
+INFO:root:(2 points) len(b) is 8
+INFO:root:(2 points) a.total_grades["22"] is 50
+INFO:root:(2 points) a.total_grades["34"] is 10
+INFO:root:You got a 30 out of 30.
