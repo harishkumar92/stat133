@@ -1,0 +1,47 @@
+INFO:root:(0 points) os.path.isfile("lab7.R") is True
+ERROR:root:(2 points) Checking ro.r('all.equal(createVector1(3), c(1,2,3,2,1))')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Modes: character, numeric
+ERROR:root:(2 points) Checking ro.r('all.equal(createVector1(2), c(1,2,1))')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Modes: character, numeric
+ERROR:root:(2 points) Checking ro.r('all.equal(createVector1(1), c(1))')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Modes: character, numeric
+ERROR:root:(2 points) Checking ro.r("all.equal(createVector2('x','y','z', 2, 3, 4),                       c('x','x','y','y','y','z','z','z','z'))")[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Lengths (1, 9) differ (string compare on first 1)
+ERROR:root:(2 points) Checking ro.r("all.equal(createVector2('abc','1','2', 2, 1, 2),                       c('abc','abc','1','2', '2'))")[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Lengths (1, 5) differ (string compare on first 1)
+ERROR:root:(2 points) Checking ro.r("all.equal(createVector2('a','121','2c', 1, 1, 1),                       c('a','121','2c'))")[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Lengths (1, 3) differ (string compare on first 1)
+ERROR:root:(2 points) Checking ro.r("all.equal(createVector2('1','2','3', 0, 1, 1),                       c('2','3'))")[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Lengths (1, 2) differ (string compare on first 1)
+ERROR:root:(2 points) Checking ro.r("all.equal(createVector3('student', 3),                       c('student 1', 'student 2', 'student 3'))")[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Lengths (1, 3) differ (string compare on first 1)
+ERROR:root:(2 points) Checking ro.r("all.equal(createVector3('item', 2),                       c('item 1', 'item 2'))")[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Lengths (1, 2) differ (string compare on first 1)
+ERROR:root:(2 points) Checking ro.r("all.equal(createVector3('item', 1),                       c('item 1'))")[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   1 string mismatch
+ERROR:root:(2 points) Checking ro.r("all.equal(createVector3('3', 1),                       c('3 1'))")[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   1 string mismatch
+ERROR:root:(2 points) Checking ro.r("all.equal(createVector4(3,4,1),                       c(exp(3)*cos(3), exp(4)*cos(4)))")[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Modes: character, numeric
+ERROR:root:(2 points) Checking ro.r("all.equal(createVector4(1,5,3),                       c(exp(1)*cos(1), exp(4)*cos(4)))")[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Modes: character, numeric
+ERROR:root:(2 points) Checking ro.r("all.equal(createVector4(1,5,2),                       c(exp(1)*cos(1), exp(3)*cos(3), exp(5)*cos(5)))")[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Modes: character, numeric
+ERROR:root:(2 points) Checking ro.r("all.equal(createVector4(3,5,3),                       c(exp(3)*cos(3)))")[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Modes: character, numeric
+INFO:root:You got a 0 out of 30.
