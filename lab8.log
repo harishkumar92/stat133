@@ -1,0 +1,43 @@
+INFO:root:(0 points) os.path.isfile("lab8.R") is True
+ERROR:root:(3 points) Checking R('all.equal(dim(simulateGradeBook(2,4)), c(2,4))')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   target is NULL, current is numeric
+INFO:root:Executed R('set.seed(1)')
+ERROR:root:(3 points) Checking R('all.equal(simulateGradeBook(2,4), matrix(c(44,42,53,55,52,66,42,57),nrow=2,byrow=TRUE))')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Modes: character, numeric
+INFO:root:Executed R('set.seed(1)')
+ERROR:root:(3 points) Checking R('all.equal(simulateGradeBook(2,3,scoreRange=c(40,60)), matrix(c(44,42,53,52,60,42),nrow=2,byrow=TRUE))')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Modes: character, numeric
+INFO:root:Executed R('set.seed(1)')
+ERROR:root:(3 points) Checking R('all.equal(simulateGradeBook(4,2), matrix(c(44, 52, 42, 66, 53, 42, 55, 57), nrow=4))')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Modes: character, numeric
+INFO:root:Executed R('set.seed(1)')
+ERROR:root:(3 points) Checking R('all.equal(simulateGradeBook(5,1,scoreRange=c(45,55)), matrix(c(45, 52, 45, 55, 53), nrow=5))')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Modes: character, numeric
+INFO:root:Executed R('A = diag(2)')
+INFO:root:Executed R('b = c(1,0)')
+ERROR:root:(3 points) Checking R('all.equal(solveLinEq(A,b), matrix(b))')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Modes: character, numeric
+INFO:root:Executed R('A = matrix(c(1,2,3,4), nrow=2)')
+INFO:root:Executed R('b = c(1,5)')
+ERROR:root:(3 points) Checking R('all.equal(solveLinEq(A,b), matrix(c(5.5, -1.5)))')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   Modes: character, numeric
+INFO:root:Executed R('A = matrix(c(1,0,0,0), nrow=2)')
+ERROR:root:(3 points) Checking R('all.equal(solveLinEq(A,b), "The matrix is not invertible: too tough for me!")')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   1 string mismatch
+INFO:root:Executed R('A = diag(3)')
+ERROR:root:(3 points) Checking R('all.equal(solveLinEq(A,b), "The vector has length 2, but the matrix is a 3 x 3 matrix: impossible problem!")')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   1 string mismatch
+INFO:root:Executed R('A = matrix(c(1,0,0,0,0,0), nrow=2)')
+ERROR:root:(3 points) Checking R('all.equal(solveLinEq(A,b), "I don\'t know how to solve for matrices with 2 rows and 3 columns")')[0]
+ERROR:root:... Expecting: True
+ERROR:root:... But got:   1 string mismatch
+INFO:root:You got a 0 out of 30.
