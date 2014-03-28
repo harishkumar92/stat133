@@ -31,8 +31,8 @@
             "possible": 30
         }, 
         "lab7": {
-            "earned": 0, 
-            "hash": "2244fd114faeb4704f2a4b92fdaf84ef5523871b", 
+            "earned": 30, 
+            "hash": "ee6610d52bb8cea434ab92cc482ab6bdc73bfed9", 
             "note": "", 
             "penalty": 0, 
             "possible": 30
@@ -45,7 +45,7 @@
             "possible": 40
         }
     }, 
-    "lab": 1, 
+    "lab": "1", 
     "login": "harishkumar92", 
     "name": "Harish Kumar Palaniswamy", 
     "status": "enrolled", 
