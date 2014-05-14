@@ -44,14 +44,18 @@ simulateGradeBook  = function(mStudents, nItems, scoreRange=c(0,100)){
     # a matrix whose row i contains randomly simulated grades for a given student
     # at nItems exams. Each row corresponds to the grades a unique student 
     # in a class of nStudents (i.e. the returned matrix should be a 
-    # nStudents x nItems matrix). 
+    # mStudents x nItems matrix). 
     # Moreover, the simulated grades should satisfy the following constrains:
     # (1) No grade should be below scoreRange[1] nor above scoreRange[2]
     # (2) The class grades for each grade items (i.e. each column) should be
     # normally distributed with mean 50 and variance 10 
     # (3) The returned grades should not have any decimal part
-
-    "NotImplemented"
+    minscore = scoreRange[1]
+    maxscore = scoreRange[2]
+    returnVal = replicate(nItems, rnorm(mStudents, mean=50, sd=10) )
+    returnVal[returnVal > maxscore] = maxscore
+    returnVal[returnVal < minscore] = minscore
+    return (round(returnVal))
 }
 
 tryCatch(
@@ -100,11 +104,25 @@ solveLinEq  = function(A, b) {
     # (4) the string "The vector has length k, but the matrix is a m x m matrix: impossible problem!"
     #     where k and m should be replaced by their actual values
     #       when the dimension of A and the length of b are incompatible (use warning3!)
-
+    
+  
     warning1 = "I don't know how to solve for matrices with %d rows and %d columns"
     warning2 = "The matrix is not invertible: too tough for me!"
     warning3 = "The vector has length %d, but the matrix is a %d x %d matrix: impossible problem!"
     "NotImplemented"
+    Arows = nrow(A)
+    Acols = ncol(A)
+    #if A is rectangular
+    if (Arows != Acols) {
+      return (sprintf(warning1,Arows, Acols))
+    }
+    if (length(b) != Arows) {
+      return (sprintf(warning3, length(b), Arows, Acols))
+    }
+    if (det(A) == 0) {
+      return (sprintf(warning2))
+    }
+    return (matrix((solve(A, b))))
 }
 
 # Tests:

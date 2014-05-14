@@ -36,12 +36,11 @@ createVector1  = function(n) {
   # Implement this function body so that it returns
   # the vector (1,..., n-1, n, n-1, n-2, ..., 1), where n is 
   # a natural number (1,2,3,...) passed as the function argument.
-  if (n == 1) {
+  if (n==1) {
     return (c(1))
-  } else {
-    returnVal = (c(seq(n), seq(from=n-1, to=1)))
-    return (returnVal)
   }
+  return (c(seq(from=1, to=n), seq(from=n-1, to=1)))
+
 
 }
 
@@ -63,9 +62,9 @@ createVector2  = function(a,b,c,k,l,m) {
   # Implement this function body so that it returns
   # the vector (a,a,...,a,b,b,...,b,c,c,...c), where a is
   # repeated k times, b is repeated l times, and c is repeated 
-  # m times. 
-  returnval = c(rep(a,k), rep(b,l), rep(c,m))
-  return (returnval)
+  # m times.
+  return (c(rep(a, k), rep(b, l), rep(c, m)))
+
 }
 
 # Tests:
@@ -106,9 +105,8 @@ createVector3  = function(label, n) {
   # Implement this function body so that it returns
   # the character vector (label 1, label 2, ..., label n), where
   # label is a string and n is an integer.
-  
-  returnVal = paste(rep(label, n) , seq(n))
-  return (returnVal)
+  return (paste(label, 1:n))
+
 }
 
 # Tests:
@@ -151,8 +149,9 @@ createVector4  = function(a, b, s) {
   # the numeric vector 
   # (exp(a)cos(a), exp(a+s)cos(a+s), exp(a+2s)cos(a+2s),...,exp(a+ns)cos(a+ns))
   #    where a < b, a+ns <= b, and a+(n+1)s > b
-  orig = seq(from=a, to=b, by=s)
-  return (exp(orig) * cos(orig))
+  returnVal = seq(from=a, to=b, by=s)
+  returnVal = exp(returnVal)*cos(returnVal)
+  return (returnVal)
 }
 
 # Tests:
