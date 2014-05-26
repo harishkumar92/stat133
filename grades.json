@@ -1,6 +1,45 @@
 {
     "email": "harishkumar@berkeley.edu", 
     "grades": {
+        "ex1": {
+            "earned": 6, 
+            "hash": "9fc3c0f428d48102b31893cdcb62b8486d8bd59c", 
+            "note": "", 
+            "penalty": 0, 
+            "possible": 6
+        }, 
+        "ex2": {
+            "earned": 6, 
+            "hash": "9fc3c0f428d48102b31893cdcb62b8486d8bd59c", 
+            "note": "", 
+            "penalty": 0, 
+            "possible": 6
+        }, 
+        "ex3": {
+            "earned": 6, 
+            "hash": "9fc3c0f428d48102b31893cdcb62b8486d8bd59c", 
+            "note": "", 
+            "penalty": 0, 
+            "possible": 6
+        }, 
+        "ex4": {
+            "earned": 6, 
+            "hash": "9fc3c0f428d48102b31893cdcb62b8486d8bd59c", 
+            "note": "", 
+            "penalty": 0, 
+            "possible": 6
+        }, 
+        "ex5": {
+            "earned": 6, 
+            "hash": "9fc3c0f428d48102b31893cdcb62b8486d8bd59c", 
+            "note": "", 
+            "penalty": 0, 
+            "possible": 24
+        }, 
+        "final": {
+            "earned": 30, 
+            "possible": 48
+        }, 
         "lab1": {
             "earned": 9, 
             "possible": 12

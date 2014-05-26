@@ -1,0 +1,10 @@
+INFO:root:(0 points) os.path.isfile("ex1.R") is True
+INFO:root:Executed R('testInput = c("023-45-7890") ')
+INFO:root:Executed R('correctOutput = c("023-45-7890") ')
+INFO:root:Executed R('functionOutput  = extractSecuNum(testInput)')
+INFO:root:(3 points) R('all.equal(correctOutput, functionOutput)')[0] is True
+INFO:root:Executed R('testInput = c( "For example", "023-45-7890", "would be a valid value", "but 05-09-1995", "and 059-2-27 would not be.", "Also 011-99-2234 is okay.") ')
+INFO:root:Executed R('correctOutput = c( "023-45-7890", "011-99-2234") ')
+INFO:root:Executed R('functionOutput  = extractSecuNum(testInput)')
+INFO:root:(3 points) R('all.equal(correctOutput, functionOutput)')[0] is True
+INFO:root:You got a 6 out of 6.

@@ -1,0 +1,10 @@
+INFO:root:(0 points) os.path.isfile("ex2.R") is True
+INFO:root:Executed R('testInput      = c(" hello ")')
+INFO:root:Executed R('correctOutput  = c("hello")')
+INFO:root:Executed R('functionOutput = rmMultipleBlanks(testInput)')
+INFO:root:(3 points) R('all.equal(correctOutput, functionOutput)')[0] is True
+INFO:root:Executed R('testInput      = c(" hello, world ", "\n \tStat 133 ")')
+INFO:root:Executed R('correctOutput  = c("hello, world", "Stat 133")')
+INFO:root:Executed R('functionOutput = rmMultipleBlanks(testInput)')
+INFO:root:(3 points) R('all.equal(correctOutput, functionOutput)')[0] is True
+INFO:root:You got a 6 out of 6.

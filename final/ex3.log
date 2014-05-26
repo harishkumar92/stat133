@@ -1,0 +1,10 @@
+INFO:root:(0 points) os.path.isfile("ex3.R") is True
+INFO:root:Executed R('testInput  = c(\'"line" "t"\')')
+INFO:root:Executed R('correctOutput = c(\'"line" "t"\')')
+INFO:root:Executed R('functionOutput = keepDoubleQuotesOnly(testInput)')
+INFO:root:(3 points) R('all.equal(correctOutput, functionOutput)')[0] is True
+INFO:root:Executed R('testInput  = c(\'this "line" has "quoted" "strings"\', \'theres "one" quoted string\', \'"one" more to follow "two"\', \'Heres a quote "\', \'"a""b"\')')
+INFO:root:Executed R('correctOutput = c(\'this "line" has "quoted" "strings"\', \'"one" more to follow "two"\', \'"a""b"\')')
+INFO:root:Executed R('functionOutput = keepDoubleQuotesOnly(testInput)')
+INFO:root:(3 points) R('all.equal(correctOutput, functionOutput)')[0] is True
+INFO:root:You got a 6 out of 6.

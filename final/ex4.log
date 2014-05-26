@@ -1,0 +1,10 @@
+INFO:root:(0 points) os.path.isfile("ex4.R") is True
+INFO:root:Executed R('testInput       = factor(c(11,0,40,-1))')
+INFO:root:Executed R('correctOutput   = 50')
+INFO:root:Executed R('functionOutput = sumFactor(testInput)')
+INFO:root:(3 points) R('all.equal(correctOutput, functionOutput)')[0] is True
+INFO:root:Executed R('testInput       = factor(c(1,0,2,3,2,1,1,1))')
+INFO:root:Executed R('correctOutput   = 11')
+INFO:root:Executed R('functionOutput = sumFactor(testInput)')
+INFO:root:(3 points) R('all.equal(correctOutput, functionOutput)')[0] is True
+INFO:root:You got a 6 out of 6.
